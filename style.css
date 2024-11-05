@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    order: 16;
+    border: 1px solid;
+    width: 600px;
+    height: 600px;
+    margin: 30px auto 0 auto;
+    background-color: white;
+}
+
+.square {
+    display: inline;
+    width: 35px;
+    height: 35px;
+    background-color: slategray;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+}
+
