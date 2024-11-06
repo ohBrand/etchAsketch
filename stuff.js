@@ -1,19 +1,29 @@
 const container = document.getElementById('container')
-const squares = document.querySelectorAll('.squares')
-const eraser = document.querySelector('button')
+const eraser = document.querySelector('.erase-el')
+const newGrid = document.querySelector('.gridcreator')
 let board;
 let boardArray = []
+let gridSize;
 
-function renderGrid() {
+function createNewGrid() {
+    container.innerHTML = ''
 
-    for (let i = 1; i <= 256; i++) {
+    gridSize = parseInt(prompt('enter a number for a new grid size(max 100x100): '))
+
+    gridSize = gridSize * gridSize
+}
+
+
+
+
+function renderGrid(grid = 256) {
+
+    for (let i = 0; i < grid; i++) {
         board = document.createElement('div')
         board.classList.add('square')
         container.appendChild(board)
         boardArray.push(board)
     }
-
-
 }
 
 renderGrid()
@@ -31,3 +41,5 @@ container.addEventListener('mouseover', (event) => {
 eraser.addEventListener('click', () => {
     boardArray.forEach(element => element.style.backgroundColor = 'slategray')
 })
+
+newGrid.addEventListener('click', createNewGrid)
